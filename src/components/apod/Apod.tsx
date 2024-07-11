@@ -35,9 +35,9 @@ const Apod: React.FC = () => {
   return (
     <div>
       <h1>{apods.title}</h1>
-      <img src={apods.url} alt={apods.title} />
+      <img src={apods.hdurl} alt={apods.title} style={{ maxWidth: '70%', height: 'auto' }} />
       <p>{apods.explanation}</p>
-      <p>{apods.copyright}</p>
+      <p>{apods.date}</p>
     </div>
   );
 };
