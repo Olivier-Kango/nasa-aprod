@@ -50,6 +50,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/axios": "^0.14.0",
     "@types/lodash.throttle": "^4.1.9",
     "@types/node": "^20.14.10",
