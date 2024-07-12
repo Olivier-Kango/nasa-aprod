@@ -14,13 +14,31 @@ h1, p, a {
   color: white;
 }
 
+/* Title Animation */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .headerTitle {
   font-family: 'Sheeping Cats', sans-serif;
   font-size: 3em;
   margin-bottom: 20px;
   font-weight: 100;
-  color: white;
   letter-spacing: 2px;
+  background: linear-gradient(-45deg, #6355a4, #e89a3e, #3e71e8, #e89a3e, #6355a4);
+  background-size: 200% 200%; /* La taille du gradient pour qu'il se déplace */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 5s ease-in-out infinite; /* Animation du gradient */
 }
 
 .toggleLink {
@@ -171,7 +189,6 @@ h1, p, a {
   margin-bottom: 10px;
   font-family: "Space Grotesk", sans-serif;
 }
-
 
 /* Media Queries */
 
