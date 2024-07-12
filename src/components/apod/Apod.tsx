@@ -18,7 +18,6 @@ const Apod: React.FC = () => {
   const [date, setDate] = useState<string>('');
   const [isGallery, setIsGallery] = useState<boolean>(false);
   
-
   useEffect(() => {
     dispatch(getApods(startDate, endDate, count, date));
   }, [count, date, dispatch, endDate, startDate]);
@@ -33,11 +32,17 @@ const Apod: React.FC = () => {
     }
   };
 
- 
+  
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: '2-digit' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
   // Render a single APOD
   const renderApod = (apod: ApodType | null) => (
     <>
-      <p>{apod?.date}</p>
+      <p>{formatDate(apod?.date || '')}</p>
       <div key={apod?.date} className={styles.singleCard}>
         <a href={apod?.hdurl}>
           <img src={apod?.hdurl} alt={apod?.title} />
@@ -117,7 +122,7 @@ const Apod: React.FC = () => {
                   <img src={apod.url} alt={apod.title} />
                 </a>
                 <div className={styles.cardContent}>
-                  <p>{apod.date}</p>
+                  <p>{formatDate(apod.date)}</p>
                   <p className={styles.cardTitle}>{apod.title}</p>
                 </div>
               </div>
