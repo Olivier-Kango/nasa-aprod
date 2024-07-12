@@ -23,6 +23,16 @@ h1, p, a {
   letter-spacing: 2px;
 }
 
+.toggleLink {
+  color: #3498db; 
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toggleLink:hover {
+  color: #2980b9;
+}
+
 .description {
   font-size: 1.1em;
   margin: 20px 0;
@@ -70,11 +80,16 @@ h1, p, a {
 }
 
 .loadingContainer {
-  display: flex;
+  padding-top: 30px;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  display: none;
+}
+
+.hiddenInput {
+  display: none;
 }
  
 .errorMessage {
@@ -89,10 +104,11 @@ h1, p, a {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -100,15 +116,14 @@ h1, p, a {
   border: 1px solid #dddddd11;
   border-radius: 8px;
   overflow: hidden;
-  width: 100%;
+  width: 300px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
   width: 100%;
-  height: auto;
-  max-height: 600px; /* ajustement pour limiter la hauteur de l'image */
-  object-fit: cover; /* ajustement pour que l'image couvre toute la carte */
+  height: 200px; 
+  object-fit: cover; 
 }
 
 .cardContent {
@@ -127,4 +142,96 @@ h1, p, a {
   font-size: 0.9em;
   color: #7f8c8d;
   font-family: "Space Grotesk", sans-serif;
+}
+
+.singleCard {
+  background-color: #8d8d8d1d;
+  border: 1px solid #dddddd11;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.singleCard img {
+  width: 100%;
+  height: auto;
+}
+
+.singleCard .cardContent {
+  padding: 15px;
+}
+
+.singleCard .cardTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .headerTitle {
+    font-size: 2.5em;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dateInput {
+    max-width: 100%;
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .singleCard {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerTitle {
+    font-size: 2em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+
+  .dateInput {
+    font-size: 0.9em;
+  }
+
+  .button {
+    font-size: 0.9em;
+  }
+
+  .errorMessage {
+    font-size: 1em;
+  }
+
+  .loadingText {
+    font-size: 1em;
+  }
+
+  .cardTitle {
+    font-size: 1em;
+  }
+
+  .cardDate {
+    font-size: 0.8em;
+  }
 }

@@ -1,6 +1,5 @@
 import { Actions } from '../constants/constants';
 import { Apod } from '../../types/apodTypes';
-import Image from '../../assets/images/background-img.jpg'
 
 // Define the shape of the state
 interface ApodState {
