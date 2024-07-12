@@ -1,3 +1,4 @@
 export const Actions = {
-  ALL_APODS: 'ALL_APODS',
+  GET_APODS: 'GET_APODS',
+  API_ERROR: 'API_ERROR',
 };

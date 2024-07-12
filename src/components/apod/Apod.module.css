@@ -1,0 +1,130 @@
+@import url('https://fonts.cdnfonts.com/css/sheeping-cats');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1, p, a {
+  color: white;
+}
+
+.headerTitle {
+  font-family: 'Sheeping Cats', sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: 100;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: 1.1em;
+  margin: 20px 0;
+  color: white;
+}
+
+.link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.searchContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dateInput {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 200px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+ 
+.errorMessage {
+  color: red;
+  font-size: 1.2em;
+  margin-top: 8rem;
+}
+
+.loadingText {
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background-color: #8d8d8d1d;
+  border: 1px solid #dddddd11;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 600px; /* ajustement pour limiter la hauteur de l'image */
+  object-fit: cover; /* ajustement pour que l'image couvre toute la carte */
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.cardTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.cardDate {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  font-family: "Space Grotesk", sans-serif;
+}

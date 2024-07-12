@@ -7,11 +7,25 @@ const apiClient = axios.create({
   baseURL: 'https://api.nasa.gov/planetary/apod',  // The base URL for the API requests
 });
 
-// Fetch all APODs from the API
-export const fetchAllApods = async (): Promise<Apod> => {
+// Fetch APODs from the API with flexible query parameters
+export const fetchAllApods = async (startDate?: string, endDate?: string, count?: number, date?: string): Promise<Apod | Apod[]> => {
   try {
-    // Make a GET request to the APOD endpoint with the API key
-    const response: AxiosResponse<Apod> = await apiClient.get(`?api_key=${API_KEY}`);
+    
+    let url = `?api_key=${API_KEY}`;
+    if (date) {
+      url += `&date=${date}`;
+    } else {
+      if (startDate) url += `&start_date=${startDate}`;
+      if (endDate) url += `&end_date=${endDate}`;
+      if (count) url += `&count=${count}`;
+    }
+
+    const response: AxiosResponse<Apod | Apod[]> = await apiClient.get(url);
+
+    if (response.status === 429) {
+      throw new Error('OVER_RATE_LIMIT');
+    }
+
     return response.data;
   } catch (e) {
     // Handle any errors that occur during the API request
